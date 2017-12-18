@@ -22,5 +22,35 @@ module.exports = {
         [ '連江縣', '45' ],
         [ '金門縣', '47' ],
         [ '澎湖縣', '49' ] 
-    ]
+    ],
+    getCityIdByName: function(name) {
+        let _idx = -1;
+        this.citys.forEach((value)=>{
+            if(name === value[0])
+                _idx = value[1];
+        });
+        return _idx;
+    },
+    getCityNameById: function(id) {
+        let _name = "";
+        this.citys.forEach((value)=>{
+            if(id == value[1])
+                _name = value[0];
+        });
+        return _name;
+    },
+    getAllCityIds: function() {
+        let _arr = [];
+        this.citys.forEach((value)=>{
+            _arr.push(value[1]);
+        });
+        return _arr;
+    },
+    getAllCityNames: function() {
+        let _arr = [];
+        this.citys.forEach((value)=>{
+            _arr.push(value[0]);
+        });
+        return _arr;
+    }
   };
